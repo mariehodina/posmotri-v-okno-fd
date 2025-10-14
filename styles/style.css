@@ -37,7 +37,64 @@ ol {
   list-style: none;
 }
 
-/* Кастомный скроллбар */
+
+/*1 ШАГ*/ 
+
+.more-button {
+  width: 100%;
+}
+
+.page{
+ display: flex;
+ flex-direction: row;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: row;
+  height: 456px;
+  width: 711px;
+  margin: auto;
+  gap: 45px;  /*с помощью этого двигать при сдаче*/
+}
+
+.result {
+display:flex;
+flex-direction: column;
+width: 711px;
+
+}
+
+.content__details{
+  display: flex;
+  flex-direction: column;
+  max-height: 543px;
+  width: 400px;
+  flex-shrink: 0; /* запрет на уменьшение*/
+
+}
+
+.search-form{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 26px;
+  
+}
+
+.more-button{
+width: 100%;
+}
+.content__list-container{
+  overflow-x: auto;
+  overflow-y: auto;
+  height: 298px;
+}
+
+
+/* Кастомный скроллбар, последующие 3 эл НЕ ТРОГАТЬ!!*/
 .custom-scrollbar::-webkit-scrollbar {
   width: 4px;
 }
@@ -48,4 +105,48 @@ ol {
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #D9D9D9;
+}
+/*после можно*/
+
+/* 2 ШАГ*/
+
+.result__video-container{
+ position:static;
+ margin-bottom: 16px; 
+ object-fit:contain;
+ /* в конце по ПП задай размеры*/
+}
+
+.content__list{ /*это что?*/
+gap: 30px;
+display: flex;
+flex-direction: column;
+
+}
+
+.content__list-item{
+  width: 100%;
+}
+
+.content__list-container{
+/* сколько гэп? как посмотреть в фигме?*/
+}
+
+.content__video-card{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.content__video-card-thumbnail{
+  object-fit: cover;
+  object-position:center;
+  width: 194px;
+  height: 103px;
+}
+
+.content__video-card-description-container{
+  flex-grow: 1;
+  min-width: 0;
 }
