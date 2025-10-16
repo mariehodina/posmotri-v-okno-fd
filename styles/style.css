@@ -132,11 +132,12 @@ flex-direction: column;
 /* сколько гэп? как посмотреть в фигме?*/
 }
 
-.content__video-card{
+.content__video-card{ /*тут что то не так*/
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   width: 100%;
+  min-width: 194px;
 }
 
 .content__video-card-thumbnail{
@@ -149,4 +150,58 @@ flex-direction: column;
 .content__video-card-description-container{
   flex-grow: 1;
   min-width: 0;
+}
+
+
+/*3 ШАГ*/
+.search-form__fieldset-title{
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 400;
+  /* width 93 height 22 подредактируешь с ПП*/
+  line-height: 100%;
+  font-size: 18px;
+}
+
+.title{
+  font-weight: 700;
+  font-style: bold;
+  font-size: 75px;
+  line-height: 94%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+}
+
+.content__accent{
+  color: grey;
+}
+
+.content__card-link{
+  color: white;
+  text-decoration: none;
+}
+
+.content__video-card-title{
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 30px;
+  line-height: 100%;
+  letter-spacing: 100%;
+  text-transform: uppercase;
+  color: white;
+  /* учтите возможность переполнения, 
+  заменяя излишний текст на “…”. доделай*/
+}
+
+.content__video-card-description{
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 16.2%;
+  letter-spacing: 0%;
+  color: white;
+  gap: 6px;
+  padding-top: 9px;
+  /*width 196px height 17px подправь потом с ПП*/
 }
