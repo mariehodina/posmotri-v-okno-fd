@@ -195,6 +195,8 @@ flex-direction: column;
 }
 
 .content__video-card-description{
+   display: inline-block;    
+  
   font-family: "Fira Sans Condensed", sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -203,5 +205,118 @@ flex-direction: column;
   color: white;
   gap: 6px;
   padding-top: 9px;
+
   /*width 196px height 17px подправь потом с ПП*/
 }
+
+/*4 ШАГ*/
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.search-form__checkbox-list{
+  display: flex;
+  gap: 17px;
+}
+
+.search-form__fieldset{
+  border: none;
+}
+
+.search-form__label{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: fit-content;
+  gap: 7px; /*ПП*/
+}
+
+input{
+  font-family: "Horizontal", sans-serif;
+  border: none;
+  color: #fff;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  gap: 10px;
+  max-width: 225px;
+  max-height: 27px;
+  appearance: none;
+  background-color: transparent;
+}
+
+.search-form__textfield::placeholder{
+ color: rgb(255 255 255 / 0.7);
+}
+.search-form__textfield:focus{
+  outline: none;
+}
+
+.search-form__label:has(:focus-visible){
+  outline: 1px solid white;
+}
+
+.search-form__pseudo-checkbox{
+  border: 1px solid white;
+  width: 19px;
+  height: 19px;
+}
+
+.search-form__pseudo-checkbox::after{
+  content: ' ';
+  display: block;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+/* стилизуем чекбокс 3 4 5 пункт??*/
+
+/*5 ШАГ*/
+
+.button{
+border: 1px solid white;
+color: white;
+font-family: "Fira Sans Condensed", sans-serif;
+font-weight: 700px;
+font-style: bold;
+font-size: 18px;
+line-height: 100%;
+background-color: transparent;
+}
+
+.search-form__submit-button{
+align-self: flex-end;
+width: 194px;
+height: 34px;
+
+}
+
+.more-button{
+height: 34px;
+width: 100%; /*ширина?? 100%?*/
+}
+
+.button:hover{
+  text-decoration: underline;
+}
+
+.button:active{
+  background-color: grey;
+}
+
+.button:focus{
+  outline: none;
+}
+
+.button:focus-visible{
+  outline: 1px solid white;
+}
+
+/*6 ШАГ*/
