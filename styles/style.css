@@ -9,6 +9,10 @@ html {
 }
 
 .page {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  flex-direction: row;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -37,62 +41,66 @@ ol {
   list-style: none;
 }
 
+/*доделать:
 
 /*1 ШАГ*/ 
 
-.more-button {
-  width: 100%;
-}
-
-.page{
- display: flex;
- flex-direction: row;
-}
-
 .content {
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  align-items:flex-end;
   flex-direction: row;
-  height: 456px;
-  width: 711px;
+  width: 1140px;
   margin: auto;
-  gap: 45px;  /*с помощью этого двигать при сдаче*/
+  gap: 30px;  
 }
 
 .result {
 display:flex;
 flex-direction: column;
 width: 711px;
-
+gap: 16px ;
+flex-shrink: 0;
 }
 
 .content__details{
   display: flex;
   flex-direction: column;
-  max-height: 543px;
   width: 400px;
+  gap: 26px;
   flex-shrink: 0; /* запрет на уменьшение*/
-
 }
 
 .search-form{
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: flex-start;
-  gap: 26px;
+  width: 100%;
+  gap: 26px; /*двигаем кнопку найти*/
   
 }
 
 .more-button{
-width: 100%;
-}
-.content__list-container{
-  overflow-x: auto;
-  overflow-y: auto;
-  height: 298px;
+min-width: 390px;
+min-height: 34px;
 }
 
+.content__list-container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  overflow-y: auto;
+  height: 298px;
+  flex-shrink: 0;
+  /*мб отступы*/
+}
+
+.result__video {
+  width: 100%;
+  height: 100%;
+}
 
 /* Кастомный скроллбар, последующие 3 эл НЕ ТРОГАТЬ!!*/
 .custom-scrollbar::-webkit-scrollbar {
@@ -111,14 +119,14 @@ width: 100%;
 /* 2 ШАГ*/
 
 .result__video-container{
- position:static;
- margin-bottom: 16px; 
- object-fit:contain;
- width: 711px;
+object-fit: contain;
+ position:relative;
+ /* margin-bottom: 16px;  */ 
+ width: 100%;
  /* в конце по ПП задай размеры*/
 }
 
-.content__list{ /*это что?*/
+.content__list{ 
 gap: 30px;
 display: flex;
 flex-direction: column;
@@ -127,18 +135,15 @@ flex-direction: column;
 
 .content__list-item{
   width: 100%;
+  /* padding: 30px; */
 }
 
-.content__list-container{
-/* сколько гэп? как посмотреть в фигме?*/
-}
 
-.content__video-card{ /*тут что то не так*/
+.content__video-card{
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   width: 100%;
-  min-width: 194px;
 }
 
 .content__video-card-thumbnail{
@@ -146,6 +151,7 @@ flex-direction: column;
   object-position:center;
   width: 194px;
   height: 103px;
+  flex-shrink: 0;
 }
 
 .content__video-card-description-container{
@@ -158,14 +164,12 @@ flex-direction: column;
 .search-form__fieldset-title{
   font-family: "Fira Sans Condensed", sans-serif;
   font-weight: 400;
-  /* width 93 height 22 подредактируешь с ПП*/
   line-height: 100%;
   font-size: 18px;
 }
 
 .title{
   font-weight: 700;
-  font-style: bold;
   font-size: 75px;
   line-height: 94%;
   letter-spacing: 0%;
@@ -200,8 +204,7 @@ flex-direction: column;
 }
 
 .content__video-card-description{
-   display: inline-block;    
-  
+  display: inline-block;    
   font-family: "Fira Sans Condensed", sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -210,11 +213,19 @@ flex-direction: column;
   color: white;
   gap: 6px;
   padding-top: 9px;
-
-  /*width 196px height 17px подправь потом с ПП*/
+  height: 73px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /*ограничение количества строк*/
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /*4 ШАГ*/
+
+.search-form__textfield{
+  width: 194px;
+}
 
 .visually-hidden {
   position: absolute;
@@ -232,6 +243,10 @@ flex-direction: column;
 }
 
 .search-form__fieldset{
+  display: flex;
+  flex-direction: column;
+  padding-left: 17px;
+  gap: 5px;
   border: none;
 }
 
@@ -246,13 +261,14 @@ flex-direction: column;
 
 input{
   font-family: "Horizontal", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
   border: none;
   color: #fff;
   border-top: 1px solid white;
   border-bottom: 1px solid white;
-  gap: 10px;
-  max-width: 225px;
-  max-height: 27px;
+  width: 225px;
+  height: 27px;
   appearance: none;
   background-color: transparent;
 }
@@ -266,23 +282,28 @@ input{
 
 .search-form__label:has(:focus-visible){
   outline: 1px solid white;
+  outline-offset: 2px;
 }
 
 .search-form__pseudo-checkbox{
   border: 1px solid white;
   width: 19px;
   height: 19px;
+  padding: 1px;
 }
 
 .search-form__pseudo-checkbox::after{
-  content: ' ';
+  content: '';
   display: block;
   background-color: white;
   width: 100%;
   height: 100%;
   opacity: 0;
 }
-/* стилизуем чекбокс 3 4 5 пункт??*/
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  opacity: 1;
+}
 
 /*5 ШАГ*/
 
@@ -302,12 +323,6 @@ cursor: pointer;
 align-self: flex-end;
 width: 194px;
 height: 34px;
-
-}
-
-.more-button{
-height: 34px;
-width: 100%; /*ширина?? 100%?*/
 }
 
 .button:hover{
@@ -331,10 +346,6 @@ width: 100%; /*ширина?? 100%?*/
   display: block;
 }
 
-.content__card-link_current{
-  background-color: grey; /*не грэй*/
-}
-
 .content__card-link:active{
   background-color:grey;
 }
@@ -356,8 +367,19 @@ outline: none;
 
 /*8 ШАГ*/
 
-.result__video-container, .content__list-container{
+ .content__list-container{
  position: relative;
 }
 
+.placeholder{
+/*position: absolute;
+display: flex;
+justify-content: center;
+align-items: center;
+top:0;
+left: 0;
+width: 100%;
+height: 100%;*/
+
+}
 
