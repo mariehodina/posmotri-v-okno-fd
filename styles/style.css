@@ -63,7 +63,7 @@ ol {
   display: flex;
   flex-direction: column;
   width: 400px;
-  gap: 16px;
+  gap: 20px;
   flex-shrink: 0;
 }
 
@@ -160,7 +160,6 @@ ol {
   font-weight: 700;
   font-size: 75px;
   line-height: 94%;
-  letter-spacing: 0%;
   text-transform: uppercase;
   font-family: "Oswald", sans-serif;
 }
@@ -178,10 +177,8 @@ ol {
   display: inline-block;
   font-family: "Oswald", sans-serif;
   font-weight: 700;
-  font-style: bold;
   font-size: 30px;
   line-height: 100%;
-  letter-spacing: 100%;
   text-transform: uppercase;
   color: white;
   display: -webkit-box;
@@ -197,7 +194,6 @@ ol {
   font-weight: 400;
   font-size: 18px;
   line-height: 16.2%;
-  letter-spacing: 0%;
   color: white;
   gap: 5px;
   padding-top: 13px;
@@ -298,8 +294,7 @@ input {
   border: 1px solid white;
   color: white;
   font-family: "Fira Sans Condensed", sans-serif;
-  font-weight: 700px;
-  font-style: bold;
+  font-weight: 700;
   font-size: 18px;
   line-height: 100%;
   background-color: transparent;
